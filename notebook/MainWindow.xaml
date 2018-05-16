@@ -10,17 +10,87 @@
         <!--定義格子-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="350"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <!--右邊選單-->
-        <Rectangle Grid.Column="1" Fill="Gray"></Rectangle>
-        <StackPanel  Grid.Column="1" Margin="10">
-            <Button Margin="0,0,0,10" x:Name="OpenBtn" Click="OpenBtn_Click">Open</Button>
-            <Button Click="Button_Click" x:Name="SaveBtn">Save</Button>
+        <!--右邊打字區-->
+        <StackPanel  Grid.Column="1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <TextBox AcceptsReturn="True" TextWrapping="Wrap" x:Name="Textarea" Height="300" Foreground="Gray" FontSize="15" BorderThickness="0"></TextBox>
+              </ScrollViewer>
+        </StackPanel>
+       
+
+        <!--左邊選單-->
+        <Rectangle Grid.Column="0" Fill="Black"></Rectangle>
+        <StackPanel>
+        <Button Margin="20,20,20,10" x:Name="OpenBtn" Click="OpenBtn_Click" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="15">Open</Button>
+        <Button Margin="20,20,20,10" Click="SaveBtn_Click" x:Name="SaveBtn" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="15">Save</Button>
+        <Button Margin="20,20,20,10" Click="SaveasBtn_Click" x:Name="SaveasBtn" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="15">Save as</Button>
+        
+        <WrapPanel>
+        <Button Margin="30,20,10,20"  x:Name="SmallBtn" Background="Transparent" BorderThickness="0" Foreground="Gray" FontSize="15" FontFamily="Times New Roman" Click="SmallBtn_Click">A</Button>
+                <Button  Margin="20,20,10,20" x:Name="MiddleBtn" Background="Transparent" BorderThickness="0" Foreground="Gray" FontSize="20" FontFamily="Times New Roman" Click="MiddleBtn_Click">A</Button>
+                <Button Margin="20,20,10,20"  x:Name="BigBtn" Background="Transparent" BorderThickness="0" Foreground="Gray" FontSize="25" FontFamily="Times New Roman" Click="BigBtn_Click_1">A</Button>
+        </WrapPanel>
+            <WrapPanel>
+            <Button x:Name="WhiteBtn" Width="40"  Height="40" Margin="20,10,10,10" Click="WhiteBtn_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+            <Grid>
+            <Ellipse Stroke="Gray"  
+                       StrokeThickness="5">
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Offset="1"  
+                                        Color="White" />
+                        <RadialGradientBrush.Transform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="0.65" />
+                            </TransformGroup>
+                        </RadialGradientBrush.Transform>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <ContentPresenter HorizontalAlignment="Center"  
+                                VerticalAlignment="Center"/>
+    </Grid>
+    </ControlTemplate>
+    </Button.Template>
+    </Button>
+                <Button x:Name="BlackBtn" Width="40"  Height="40" Margin="20,10,10,10" Click="BlackBtn_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Ellipse Stroke="Gray"  
+                       StrokeThickness="5">
+                                    <Ellipse.Fill>
+                                        <RadialGradientBrush>
+                                            <GradientStop Offset="1"  
+                                        Color="Black" />
+                                            <RadialGradientBrush.Transform>
+                                                <TransformGroup>
+                                                    <ScaleTransform ScaleY="0.65" />
+                                                </TransformGroup>
+                                            </RadialGradientBrush.Transform>
+                                        </RadialGradientBrush>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <ContentPresenter HorizontalAlignment="Center"  
+                                VerticalAlignment="Center"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </WrapPanel>
         </StackPanel>
 
-        <!--左邊打字區-->
-        <TextBox AcceptsReturn="True" TextWrapping="Wrap" x:Name="Textarea"></TextBox>
+
+
+
+
+
+
+
     </Grid>
 </Window>
