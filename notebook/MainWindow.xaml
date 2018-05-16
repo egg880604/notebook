@@ -24,16 +24,31 @@
         <!--左邊選單-->
         <Rectangle Grid.Column="0" Fill="Black"></Rectangle>
         <StackPanel>
+            
+        <!--open按鈕-->
         <Button Margin="20,20,20,10" x:Name="OpenBtn" Click="OpenBtn_Click" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="15">Open</Button>
+        
+        <!--Save按鈕-->
         <Button Margin="20,20,20,10" Click="SaveBtn_Click" x:Name="SaveBtn" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="15">Save</Button>
+            
+        <!--save as按鈕-->
         <Button Margin="20,20,20,10" Click="SaveasBtn_Click" x:Name="SaveasBtn" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="15">Save as</Button>
         
         <WrapPanel>
+            
+        <!--小字體按鈕-->
         <Button Margin="30,20,10,20"  x:Name="SmallBtn" Background="Transparent" BorderThickness="0" Foreground="Gray" FontSize="15" FontFamily="Times New Roman" Click="SmallBtn_Click">A</Button>
-                <Button  Margin="20,20,10,20" x:Name="MiddleBtn" Background="Transparent" BorderThickness="0" Foreground="Gray" FontSize="20" FontFamily="Times New Roman" Click="MiddleBtn_Click">A</Button>
-                <Button Margin="20,20,10,20"  x:Name="BigBtn" Background="Transparent" BorderThickness="0" Foreground="Gray" FontSize="25" FontFamily="Times New Roman" Click="BigBtn_Click_1">A</Button>
+            
+        <!--中字體按鈕-->
+        <Button  Margin="20,20,10,20" x:Name="MiddleBtn" Background="Transparent" BorderThickness="0" Foreground="Gray" FontSize="20" FontFamily="Times New Roman" Click="MiddleBtn_Click">A</Button>
+            
+        <!--大字體按鈕-->
+        <Button Margin="20,20,10,20"  x:Name="BigBtn" Background="Transparent" BorderThickness="0" Foreground="Gray" FontSize="25" FontFamily="Times New Roman" Click="BigBtn_Click_1">A</Button>
         </WrapPanel>
-            <WrapPanel>
+           
+        <WrapPanel>
+            
+        <!--白色按鈕-->
             <Button x:Name="WhiteBtn" Width="40"  Height="40" Margin="20,10,10,10" Click="WhiteBtn_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
@@ -58,6 +73,8 @@
     </ControlTemplate>
     </Button.Template>
     </Button>
+            
+    <!--黑色按鈕-->
                 <Button x:Name="BlackBtn" Width="40"  Height="40" Margin="20,10,10,10" Click="BlackBtn_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -85,6 +102,7 @@
             </WrapPanel>
         </StackPanel>
 
+        <!--圓形按鈕參考https://www.c-sharpcorner.com/blogs/round-button-in-wpf1-->
 
 
 

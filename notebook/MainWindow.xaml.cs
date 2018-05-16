@@ -25,18 +25,12 @@ namespace notebook
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-            
-        }
-
         private void OpenBtn_Click(object sender, RoutedEventArgs e)
         {
-            //產生處存檔案的視窗
+            // 產生處存檔案的視窗
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
 
-            //顯示視窗
+            // 顯示視窗
             Nullable<bool> result = dlg.ShowDialog();
 
             //當按下儲存之後的反應
@@ -47,55 +41,58 @@ namespace notebook
         }
 
         private void SaveasBtn_Click(object sender, RoutedEventArgs e)
-        {
-            //產生處存檔案的視窗
+        { 
+            // 產生處存檔案的視窗
             Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
 
-            //顯示視窗
+            // 顯示視窗
             Nullable<bool> result = dlg.ShowDialog();
 
-            //當按下儲存之後的反應
+            // 當按下儲存之後的反應
             if (result == true)
             {
-                //寫入檔案
+                // 寫入檔案
                 System.IO.File.WriteAllText(dlg.FileName, Textarea.Text);
             }
-            //存檔
+           
+            // 存檔
         }
 
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
+            // 直接儲存檔案到c:\temp\aaatxt
             System.IO.File.WriteAllText(@"C:\temp\aaa.txt", Textarea.Text);
         }
 
-        private void BigBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+        
         private void BigBtn_Click_1(object sender, RoutedEventArgs e)
         {
+            // 把texbox裡的字改變成25大小
             Textarea.FontSize = 25;
         }
 
         private void MiddleBtn_Click(object sender, RoutedEventArgs e)
         {
+            // 把texbox裡的字改變成20大小
             Textarea.FontSize = 20;
         }
 
         private void SmallBtn_Click(object sender, RoutedEventArgs e)
         {
+            // 把texbox裡的字改變成15大小
             Textarea.FontSize = 15;
         }
 
         private void WhiteBtn_Click(object sender, RoutedEventArgs e)
         {
+            // 把texbox裡的背景改變成白色
             Textarea.Background = Brushes.White;
         }
 
         private void BlackBtn_Click(object sender, RoutedEventArgs e)
         {
+            // 把texbox裡的背景改變成黑色
             Textarea.Background = Brushes.Black;
         }
     }
